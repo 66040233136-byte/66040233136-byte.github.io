@@ -13,11 +13,34 @@
       color-scheme: dark;
     }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,var(--bg),#071226); color:#e6eef6; line-height:1.45}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#071226);
+      color:#e6eef6;
+      line-height:1.45
+    }
     .container{max-width:1100px;margin:36px auto;padding:28px}
 
     header{display:flex;gap:20px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:16px;flex:0 0 120px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700;font-size:28px;color:white}
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius:16px;
+      flex:0 0 120px;
+      overflow:hidden;
+      background:var(--card);
+      display:grid;
+      place-items:center;
+      box-shadow:0 0 12px rgba(0,0,0,0.4);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:16px;
+    }
+
     h1{margin:0;font-size:28px}
     .subtitle{color:var(--muted);margin-top:6px}
 
@@ -28,7 +51,12 @@
     .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
 
     /* main card */
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:14px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      padding:20px;
+      border-radius:14px;
+      box-shadow:0 6px 24px rgba(2,6,23,0.6)
+    }
     section + section{margin-top:18px}
     h2{margin:0 0 10px 0;font-size:18px}
     p.lead{color:var(--muted);margin:0}
@@ -41,7 +69,15 @@
     .projects{display:grid;gap:12px}
     .proj{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
     .proj .meta{flex:1}
-    .proj a.btn{display:inline-block;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+    .proj a.btn{
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:white
+    }
 
     /* sidebar */
     aside .card{position:sticky;top:28px}
@@ -53,16 +89,22 @@
     footer{margin-top:24px;text-align:center;color:var(--muted);font-size:14px}
 
     /* responsive */
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:88px;height:88px}}
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .avatar{width:88px;height:88px}
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="avatar">ชื่อ<br>สกุล</div>
+      <div class="avatar">
+        <!-- 🔹 ใส่ชื่อไฟล์รูปของคุณแทนที่ "your-photo.jpg" -->
+        <img src="profile.jpg" alt="Profile photo">
+      </div>
       <div>
-        <h1>ชื่อ นามสกุล (phongsakorn thongsri)</h1>
-        <div class="subtitle">คณะ/มหาวิทยาลัย • สาขา เทคโนโลยีสารสนเทศ • นักศึกษาปี 3 • ความสนใจ: AI, Web Dev, Data Science</div>
+        <h1>พงศกร ธงศรี (Phongsakorn Thongsri)</h1>
+        <div class="subtitle">คณะวิทยาศาสตร์ • สาขาเทคโนโลยีสารสนเทศ • นักศึกษาปี 3 • ความสนใจ: AI, Web Dev, Data Science</div>
       </div>
       <nav>
         <a href="#about">About</a>
@@ -76,12 +118,11 @@
       <main>
         <div class="card" id="about">
           <h2>1. แนะนำตัว (Introduction / Profile)</h2>
-          
           <section>
             <strong>ข้อมูลหลัก</strong>
             <ul>
-              <li>ชื่อ-นามสกุล (พงศกร ธงศรี / phongsakorn thongsri)</li>
-              <li>คณะ: วิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</li>
+              <li>ชื่อ-นามสกุล: พงศกร ธงศรี (Phongsakorn Thongsri)</li>
+              <li>คณะ: วิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ</li>
               <li>ปีการศึกษา: 2566 – ปัจจุบัน</li>
             </ul>
           </section>
@@ -97,7 +138,6 @@
 
         <div class="card" id="skills">
           <h2>2. ทักษะ (Skills)</h2>
-          
           <section>
             <strong>Programming</strong>
             <div class="tags">
@@ -131,28 +171,20 @@
 
         <div class="card" id="projects">
           <h2>3. ผลงานที่ผ่านมา (Projects / Portfolio)</h2>
-          <p class="lead">แสดงผลงานที่ทำo</p>
-
           <div class="projects">
             <article class="proj">
               <div class="meta">
                 <strong>ระบบจองห้องประชุมออนไลน์</strong>
                 <div class="muted">Web Project • HTML/CSS/JS • GitHub</div>
-                <p class="muted" style="margin-top:6px">สรุปสั้น ๆ ว่าโปรเจกต์ทำอะไร มีฟีเจอร์อะไรบ้าง เช่น จอง ดูสถานะ ส่งอีเมลยืนยัน</p>
-              </div>
-              <div>
-
+                <p class="muted" style="margin-top:6px">โปรเจกต์ระบบจอง ดูสถานะ และส่งอีเมลยืนยัน</p>
               </div>
             </article>
 
             <article class="proj">
               <div class="meta">
-                <strong>AI ทำนายโรคเบาหวาน (Machine Learning)</strong>
+                <strong>AI ทำนายโรคเบาหวาน</strong>
                 <div class="muted">Data Project • Python • scikit-learn</div>
-                <p class="muted" style="margin-top:6px">โมเดล, Dataset, Dashboard visualization</p>
-              </div>
-              <div>
-                
+                <p class="muted" style="margin-top:6px">โมเดล Machine Learning วิเคราะห์ข้อมูลสุขภาพ</p>
               </div>
             </article>
 
@@ -160,38 +192,29 @@
               <div class="meta">
                 <strong>Dashboard วิเคราะห์ข้อมูลร้านกาแฟ</strong>
                 <div class="muted">Data Visualization • Power BI</div>
-                <p class="muted" style="margin-top:6px">Dashboard แสดงยอดขาย, เวลาเร่งด่วน, และสต็อก</p>
-              </div>
-              <div>
-                
+                <p class="muted" style="margin-top:6px">Dashboard แสดงยอดขาย ช่วงเวลาพีค และสต็อก</p>
               </div>
             </article>
           </div>
-
-          
         </div>
 
         <div class="card" id="education">
           <h2>4. การศึกษา (Education)</h2>
-
-          <p class="lead">โรงเรียนบ้านบึงโน ระดับประถมศึกษา</p>
-          <p class="lead">โรงเรียนสว่างเเดนดิน ระดับมัธยมศึกษา</p>
-          <p class="lead">การศึกษาปัจจุบัน คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ — มหาวิทยาลัยราชภัฏอุดรธานี</p>
-         
+          <p class="lead">โรงเรียนบ้านบึงโน — ระดับประถมศึกษา</p>
+          <p class="lead">โรงเรียนสว่างแดนดิน — ระดับมัธยมศึกษา</p>
+          <p class="lead">มหาวิทยาลัยราชภัฏอุดรธานี — คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ</p>
         </div>
 
         <div class="card" id="activities">
           <h2>5. กิจกรรมและผลงานอื่น ๆ (Activities / Achievements)</h2>
           <ul>
-            <li>เข้าร่วมอบรม "AI"</li>
-            
+            <li>เข้าร่วมอบรมหัวข้อ “AI และการประยุกต์ใช้งาน”</li>
           </ul>
         </div>
-
       </main>
 
       <aside>
-        <div class="card">
+        <div class="card" id="contact">
           <h2>6. ติดต่อ (Contact)</h2>
           <div class="contact-list">
             <div class="contact-item">
@@ -206,39 +229,29 @@
               <div class="icon">🐙</div>
               <div>
                 <div class="muted">GitHub</div>
-                <div><a href="Github" style="color:inherit;text-decoration:underline">https://github.com/66040233136-byte</a></div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon">💼</div>
-              <div>
-                
+                <div><a href="https://github.com/66040233136-byte" style="color:inherit;text-decoration:underline">66040233136-byte</a></div>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="icon">📍</div>
               <div>
-                <div class="muted">ที่อยู่ (จังหวัด)</div>
+                <div class="muted">ที่อยู่</div>
                 <div>อุดรธานี, ประเทศไทย</div>
               </div>
             </div>
-
           </div>
 
           <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
-          <h2>7. องค์ประกอบเสริม (Career Interest)</h2>
+          <h2>7. ความสนใจในอาชีพ (Career Interest)</h2>
           <p class="muted">สนใจด้าน: Machine Learning Engineer, Data Analyst, Frontend Developer</p>
         </div>
-
-        <div style="height:16px"></div>
-
-        
-
       </aside>
     </div>
 
     <footer>
-      สร้างด้วย ❤️ — ปรับแต่งเนื้อหาให้เป็นของคุณแล้วอัปโหลดไปที่ GitHub Pages
-    </foo
+      สร้างด้วย ❤️ โดย พงศกร ธงศรี — ปรับแต่งเพิ่มเติมแล้วอัปโหลดไปที่ GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
